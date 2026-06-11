@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Почему ты не можешь похудеть — Анастасия</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --rose:    #C9847A;
+    --blush:   #F2D4CE;
+    --lblush:  #FAF0EC;
+    --mauve:   #7D4E57;
+    --dmauve:  #5C3540;
+    --cream:   #FDF8F4;
+    --gold:    #C4A882;
+    --lgold:   #F7F0E2;
+    --char:    #2E2424;
+    --gray:    #6B5B5B;
+    --lgray:   #F5F0EE;
+    --sage:    #8FA68E;
+    --lsage:   #EBF0EB;
+    --white:   #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--char);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, var(--dmauve) 0%, var(--mauve) 55%, var(--rose) 100%);
+    color: white;
+    padding: 64px 24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 100px;
+    padding: 5px 16px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 8vw, 42px);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--blush);
+  }
+  .hero-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 32px;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+  }
+  .hero-author-dot {
+    width: 6px; height: 6px;
+    background: var(--rose);
+    border-radius: 50%;
+  }
+
+  /* ── STORY ── */
+  .story {
+    padding: 52px 24px;
+    background: var(--white);
+  }
+  .story-inner {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .story h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 6vw, 30px);
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--dmauve);
+    margin-bottom: 20px;
+  }
+  .story p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+  .story p strong {
+    color: var(--char);
+    font-weight: 500;
+  }
+  .story-quote {
+    border-left: 3px solid var(--rose);
+    padding: 14px 18px;
+    background: var(--lblush);
+    border-radius: 0 10px 10px 0;
+    margin: 24px 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--mauve);
+    line-height: 1.5;
+  }
+
+  /* ── WHAT INSIDE ── */
+  .inside {
+    padding: 52px 24px;
+    background: var(--cream);
+  }
+  .inside-inner { max-width: 480px; margin: 0 auto; }
+  .inside h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 6vw, 30px);
+    font-weight: 600;
+    color: var(--dmauve);
+    margin-bottom: 28px;
+    line-height: 1.25;
+  }
+  .chapter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+  .chapter-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--white);
+    border-radius: 12px;
+    padding: 14px 16px;
+    border: 1px solid var(--blush);
+  }
+  .chapter-num {
+    min-width: 28px;
+    height: 28px;
+    background: var(--rose);
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+  .chapter-text {
+    font-size: 13.5px;
+    color: var(--char);
+    line-height: 1.5;
+    padding-top: 3px;
+  }
+
+  /* ── FOR WHOM ── */
+  .forwhom {
+    padding: 52px 24px;
+    background: linear-gradient(135deg, var(--lblush) 0%, var(--lgold) 100%);
+  }
+  .forwhom-inner { max-width: 480px; margin: 0 auto; }
+  .forwhom h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 6vw, 30px);
+    font-weight: 600;
+    color: var(--dmauve);
+    margin-bottom: 24px;
+  }
+  .check-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--char);
+    line-height: 1.55;
+  }
+  .check-icon {
+    width: 22px;
+    height: 22px;
+    background: var(--rose);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: white;
+    font-size: 11px;
+  }
+
+  /* ── PRODUCTS ── */
+  .products {
+    padding: 52px 24px;
+    background: var(--white);
+  }
+  .products-inner { max-width: 480px; margin: 0 auto; }
+  .products h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 6vw, 30px);
+    font-weight: 600;
+    color: var(--dmauve);
+    margin-bottom: 28px;
+    line-height: 1.25;
+  }
+
+  .product-card {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    border: 1.5px solid var(--blush);
+    background: var(--cream);
+  }
+  .product-card.featured {
+    border-color: var(--rose);
+    box-shadow: 0 4px 24px rgba(201,132,122,0.18);
+  }
+  .product-header {
+    padding: 20px 20px 16px;
+    position: relative;
+  }
+  .product-card.featured .product-header {
+    background: linear-gradient(135deg, var(--dmauve), var(--mauve));
+    color: white;
+  }
+  .product-card:not(.featured) .product-header {
+    background: var(--lblush);
+  }
+  .product-badge {
+    display: inline-block;
+    background: var(--rose);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+  }
+  .product-card:not(.featured) .product-badge {
+    background: var(--gold);
+  }
+  .product-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+  .product-card.featured .product-title { color: white; }
+  .product-card:not(.featured) .product-title { color: var(--dmauve); }
+  .product-desc {
+    font-size: 12.5px;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+  .product-body {
+    padding: 16px 20px 20px;
+  }
+  .product-includes {
+    list-style: none;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .product-includes li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.45;
+  }
+  .product-includes li::before {
+    content: '✦';
+    color: var(--rose);
+    font-size: 9px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+  .product-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .product-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--dmauve);
+    line-height: 1;
+  }
+  .product-price span {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray);
+  }
+  .product-price-old {
+    font-size: 13px;
+    color: var(--gray);
+    text-decoration: line-through;
+    margin-top: 2px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 22px;
+    border-radius: 100px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    transition: all 0.2s ease;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--rose), var(--mauve));
+    color: white;
+    box-shadow: 0 4px 16px rgba(201,132,122,0.35);
+  }
+  .btn-primary:active { transform: scale(0.97); }
+  .btn-secondary {
+    background: var(--lblush);
+    color: var(--mauve);
+    border: 1.5px solid var(--blush);
+  }
+  .btn-full { width: 100%; }
+
+  /* BUNDLE */
+  .bundle-card {
+    background: linear-gradient(135deg, var(--lgold), var(--lblush));
+    border: 2px solid var(--gold);
+    border-radius: 16px;
+    padding: 24px 20px;
+    margin-top: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  .bundle-tag {
+    position: absolute;
+    top: 14px;
+    right: -10px;
+    background: var(--gold);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 20px 5px 12px;
+    border-radius: 100px 0 0 100px;
+  }
+  .bundle-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--dmauve);
+    margin-bottom: 6px;
+  }
+  .bundle-sub {
+    font-size: 12.5px;
+    color: var(--gray);
+    margin-bottom: 16px;
+  }
+  .bundle-items {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .bundle-item {
+    background: white;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: var(--mauve);
+    font-weight: 500;
+    border: 1px solid var(--blush);
+  }
+  .bundle-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .bundle-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--dmauve);
+    line-height: 1;
+  }
+  .bundle-price-old {
+    font-size: 13px;
+    color: var(--gray);
+    text-decoration: line-through;
+  }
+  .bundle-saving {
+    display: inline-block;
+    background: var(--sage);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-top: 4px;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .how {
+    padding: 52px 24px;
+    background: var(--cream);
+  }
+  .how-inner { max-width: 480px; margin: 0 auto; }
+  .how h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 6vw, 28px);
+    font-weight: 600;
+    color: var(--dmauve);
+    margin-bottom: 28px;
+  }
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .step {
+    display: flex;
+    gap: 16px;
+    position: relative;
+  }
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 36px;
+    width: 2px;
+    height: calc(100% - 10px);
+    background: var(--blush);
+  }
+  .step-num {
+    width: 32px;
+    height: 32px;
+    background: var(--rose);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+  .step-content {
+    padding-bottom: 28px;
+    padding-top: 4px;
+  }
+  .step-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--char);
+    margin-bottom: 4px;
+  }
+  .step-desc {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.55;
+  }
+
+  /* ── TESTIMONIAL / RESULT ── */
+  .result-section {
+    padding: 52px 24px;
+    background: linear-gradient(160deg, var(--dmauve), var(--mauve));
+    text-align: center;
+    color: white;
+  }
+  .result-inner { max-width: 480px; margin: 0 auto; }
+  .result-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--blush);
+    margin-bottom: 4px;
+  }
+  .result-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 28px;
+    letter-spacing: 0.05em;
+  }
+  .result-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.92);
+    max-width: 380px;
+    margin: 0 auto 24px;
+  }
+  .result-author {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── FAQ ── */
+  .faq {
+    padding: 52px 24px;
+    background: var(--white);
+  }
+  .faq-inner { max-width: 480px; margin: 0 auto; }
+  .faq h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 6vw, 28px);
+    font-weight: 600;
+    color: var(--dmauve);
+    margin-bottom: 24px;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--blush);
+    padding: 16px 0;
+  }
+  .faq-q {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--char);
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+  }
+  .faq-icon {
+    color: var(--rose);
+    font-size: 18px;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 1px;
+    transition: transform 0.2s;
+  }
+  .faq-a {
+    font-size: 13.5px;
+    color: var(--gray);
+    line-height: 1.65;
+    display: none;
+  }
+  .faq-item.open .faq-a { display: block; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  /* ── CTA BOTTOM ── */
+  .cta-bottom {
+    padding: 52px 24px 64px;
+    background: var(--cream);
+    text-align: center;
+  }
+  .cta-bottom-inner { max-width: 400px; margin: 0 auto; }
+  .cta-bottom h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 7vw, 34px);
+    font-weight: 600;
+    color: var(--dmauve);
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+  .cta-bottom p {
+    font-size: 13.5px;
+    color: var(--gray);
+    margin-bottom: 28px;
+    line-height: 1.65;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dmauve);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 24px;
+    font-size: 11.5px;
+    line-height: 1.7;
+  }
+  footer a { color: var(--blush); text-decoration: none; }
+
+  /* ── STICKY CTA ── */
+  .sticky-cta {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: white;
+    border-top: 1px solid var(--blush);
+    padding: 12px 20px 20px;
+    z-index: 100;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+    display: none;
+  }
+  .sticky-cta.visible { display: block; }
+  .sticky-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .sticky-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--dmauve);
+    white-space: nowrap;
+  }
+  .sticky-label {
+    font-size: 11px;
+    color: var(--gray);
+    line-height: 1.3;
+  }
+  .sticky-cta .btn { flex: 1; }
+
+  /* ── UTILS ── */
+  .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--rose);
+    margin: 16px 0 24px;
+  }
+  .text-center { text-align: center; }
+  .text-center .divider { margin: 16px auto 24px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">✦ Авторский гайд от Анастасии</div>
+  <h1>Почему ты не можешь похудеть, <em>хотя всё делаешь правильно</em></h1>
+  <p class="hero-sub">Честный разговор о теле, психологии и о том, что на самом деле мешает</p>
+  <div class="hero-author">
+    <span>Анастасия</span>
+    <div class="hero-author-dot"></div>
+    <a href="https://instagram.com/mammi.bossss" target="_blank" style="color:rgba(255,255,255,0.7);text-decoration:none;">@mammi.bossss</a>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="story-inner">
+    <div class="eyebrow">Моя история</div>
+    <h2>Я делала всё правильно. И ничего не происходило.</h2>
+    <div class="divider"></div>
+    <p>Зал. Подсчёт калорий. Пост. Сила воли — на максимуме. Всё как в учебнике. <strong>Весы не двигались.</strong></p>
+    <p>Я смотрела на других и не понимала — что не так со мной? Минус 2 кг за месяц поста. Два килограмма. И я сидела с вопросом: ну как? Что ещё нужно этому телу?</p>
+    <div class="story-quote">
+      Оказалось — телу не нужна была диета. Ему нужно было кое-что другое.
+    </div>
+    <p>Я не пошла к диетологу. Не купила новый план питания. Я просто <strong>начала возвращаться к себе</strong> — и всё начало меняться само.</p>
+    <p>Сейчас минус 10 кг. Без диет, без подсчётов, без насилия над собой.</p>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="inside">
+  <div class="inside-inner">
+    <div class="eyebrow">Что внутри гайда</div>
+    <h2>9 глав, которые меняют взгляд на всё</h2>
+    <div class="divider"></div>
+    <div class="chapter-list">
+      <div class="chapter-item"><div class="chapter-num">01</div><div class="chapter-text">Моя история — как я делала всё правильно и стояла на месте</div></div>
+      <div class="chapter-item"><div class="chapter-num">02</div><div class="chapter-text">Физиология стресса — почему кортизол мешает худеть</div></div>
+      <div class="chapter-item"><div class="chapter-num">03</div><div class="chapter-text">Психология лишнего веса — голова важнее тарелки</div></div>
+      <div class="chapter-item"><div class="chapter-num">04</div><div class="chapter-text">Что мы на самом деле заедаем — и почему</div></div>
+      <div class="chapter-item"><div class="chapter-num">05</div><div class="chapter-text">Кортизол, тревога и жировые клетки — связь, которую игнорируют</div></div>
+      <div class="chapter-item"><div class="chapter-num">06</div><div class="chapter-text">Три ловушки, в которые попадают все</div></div>
+      <div class="chapter-item"><div class="chapter-num">07</div><div class="chapter-text">Как только я это поняла — всё изменилось само</div></div>
+      <div class="chapter-item"><div class="chapter-num">08</div><div class="chapter-text">Практика: вопросы к себе, которые меняют всё</div></div>
+      <div class="chapter-item"><div class="chapter-num">09</div><div class="chapter-text">Где я сейчас — и что это значит для тебя</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="forwhom">
+  <div class="forwhom-inner">
+    <div class="eyebrow">Это для тебя, если</div>
+    <h2>Узнаёшь себя?</h2>
+    <div class="divider"></div>
+    <div class="check-list">
+      <div class="check-item"><div class="check-icon">✓</div><div>Ты считаешь калории и ходишь в зал — а вес не двигается</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Ты срываешься и потом долго чувствуешь вину</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Ты ешь не от голода, а «потому что стресс» или «просто так»</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Ты откладываешь жизнь на «вот похудею — и тогда»</div></div>
+      <div class="check-item"><div class="check-icon">✓</div><div>Ты устала воевать с собой и хочешь наконец понять причину</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="products-inner">
+    <div class="eyebrow">Выбери свой формат</div>
+    <h2>Что ты получишь</h2>
+    <div class="divider"></div>
+
+    <!-- GUIDE -->
+    <div class="product-card featured">
+      <div class="product-header">
+        <div class="product-badge">✦ Гайд</div>
+        <div class="product-title">Почему ты не можешь похудеть, хотя всё делаешь правильно</div>
+        <div class="product-desc">PDF · 9 глав · Читаешь, понимаешь, осознаёшь</div>
+      </div>
+      <div class="product-body">
+        <ul class="product-includes">
+          <li>Личная история автора и как всё изменилось</li>
+          <li>Физиология стресса и кортизола простым языком</li>
+          <li>Психологические механизмы лишнего веса</li>
+          <li>Почему тело держится за вес — и как это изменить</li>
+          <li>Практические вопросы для работы с собой</li>
+        </ul>
+        <div class="product-price-row">
+          <div>
+            <div class="product-price">199 <span>₽</span></div>
+          </div>
+          <a href="ССЫЛКА_PRODAMUS_ГАЙД" class="btn btn-primary" target="_blank">Купить гайд</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORKBOOK -->
+    <div class="product-card">
+      <div class="product-header">
+        <div class="product-badge">✦ Воркбук</div>
+        <div class="product-title">Рабочая тетрадь: работа с собой</div>
+        <div class="product-desc">PDF · 7 разделов · Берёшь и делаешь</div>
+      </div>
+      <div class="product-body">
+        <ul class="product-includes">
+          <li>Упражнения с местом для письменных ответов</li>
+          <li>Шкалы, чекбоксы, таблицы для самоанализа</li>
+          <li>Неделя наблюдений — один вопрос в день</li>
+          <li>Финальное упражнение: письмо своему телу</li>
+        </ul>
+        <div class="product-price-row">
+          <div>
+            <div class="product-price">299 <span>₽</span></div>
+          </div>
+          <a href="ССЫЛКА_PRODAMUS_ВОРКБУК" class="btn btn-secondary" target="_blank">Купить тетрадь</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUNDLE -->
+    <div class="bundle-card">
+      <div class="bundle-tag">Выгодно</div>
+      <div class="bundle-title">Гайд + Воркбук</div>
+      <div class="bundle-sub">Полный комплект для работы с телом и с собой</div>
+      <div class="bundle-items">
+        <div class="bundle-item">✦ Гайд (PDF)</div>
+        <div class="bundle-item">✦ Воркбук (PDF)</div>
+      </div>
+      <div class="bundle-price-row">
+        <div>
+          <div class="bundle-price">399 <span style="font-size:16px;color:var(--gray);font-family:Inter,sans-serif;font-weight:400">₽</span></div>
+          <div class="bundle-price-old">вместо 498 ₽</div>
+          <div class="bundle-saving">экономия 99 ₽</div>
+        </div>
+        <a href="ССЫЛКА_PRODAMUS_КОМПЛЕКТ" class="btn btn-primary" target="_blank">Купить комплект</a>
+      </div>
+    </div>
+
+    <!-- HOW DELIVERY WORKS -->
+    <div style="background:var(--lsage);border-radius:12px;padding:16px 18px;margin-top:20px;border:1px solid var(--sage);">
+      <div style="font-weight:600;font-size:13px;color:#4a6b49;margin-bottom:6px;">📩 Как получить файлы?</div>
+      <div style="font-size:13px;color:var(--gray);line-height:1.6;">После оплаты ссылка на скачивание придёт на твой email автоматически. Проверь папку «Спам», если письмо не пришло в течение 5 минут.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="how-inner">
+    <div class="eyebrow">Как это работает</div>
+    <h2>Три шага до материала</h2>
+    <div class="divider"></div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Выбери формат</div>
+          <div class="step-desc">Гайд, воркбук или выгодный комплект — нажми кнопку «Купить»</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Оплати любым удобным способом</div>
+          <div class="step-desc">Картой, СБП или другим способом через Prodamus — безопасно</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Получи ссылку на email</div>
+          <div class="step-desc">Сразу после оплаты на твою почту придёт письмо со ссылкой на скачивание</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULT -->
+<section class="result-section">
+  <div class="result-inner">
+    <div class="result-num">−10</div>
+    <div class="result-label">кг · без диет · без подсчётов · без насилия над собой</div>
+    <div class="result-quote">
+      «Вес начал таять сам. Не потому что я ограничивала себя, а потому что ушла причина переедать.»
+    </div>
+    <div class="result-author">— Анастасия, автор гайда</div>
+    <div style="margin-top:32px;">
+      <a href="#products" class="btn btn-primary">Хочу так же →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="faq-inner">
+    <div class="eyebrow">Вопросы и ответы</div>
+    <h2>Частые вопросы</h2>
+    <div class="divider"></div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        В каком формате приходит материал?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">PDF-файлы, которые можно читать на телефоне, планшете или компьютере. Воркбук можно распечатать и заполнять от руки.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Это медицинские рекомендации?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">Нет. Это личный опыт автора и познавательный материал о психологии и физиологии. Гайд не заменяет консультацию специалиста.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Это про диету и питание?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">Нет — совсем наоборот. Гайд о том, почему диеты часто не работают и что на самом деле стоит за лишним весом.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Что если письмо не пришло?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">Проверь папку «Спам» — иногда письма попадают туда. Если письма нет — напиши в Instagram @mammi.bossss, разберёмся.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Можно ли вернуть деньги?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">Поскольку материал — цифровой и передаётся сразу после оплаты, возврат не предусмотрен. Если возникли технические проблемы — пишите, помогу.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BOTTOM -->
+<section class="cta-bottom">
+  <div class="cta-bottom-inner">
+    <h2>Начни разговор<br>с собой сегодня</h2>
+    <p>Не в следующий понедельник. Не когда будет настроение. Сейчас — пока это откликается.</p>
+    <a href="#products" class="btn btn-primary" style="width:100%;max-width:320px;display:flex;margin:0 auto;">Выбрать свой формат →</a>
+    <div style="margin-top:16px;">
+      <a href="https://instagram.com/mammi.bossss" target="_blank" style="font-size:12px;color:var(--gray);text-decoration:none;">@mammi.bossss в Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Анастасия · <a href="https://instagram.com/mammi.bossss" target="_blank">@mammi.bossss</a></p>
+  <p style="margin-top:6px;max-width:400px;margin-left:auto;margin-right:auto;">
+    Материалы носят исключительно познавательный характер. Автор не является врачом, диетологом или психологом и не несёт ответственности за действия читателей.
+  </p>
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-row">
+    <div>
+      <div class="sticky-price">от 199 ₽</div>
+      <div class="sticky-label">Гайд или комплект</div>
+    </div>
+    <a href="#products" class="btn btn-primary">Купить</a>
+  </div>
+</div>
+
+<script>
+  // FAQ toggle
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    item.classList.toggle('open');
+  }
+
+  // Sticky CTA
+  const hero = document.querySelector('.hero');
+  const sticky = document.getElementById('stickyCta');
+  const observer = new IntersectionObserver(([e]) => {
+    sticky.classList.toggle('visible', !e.isIntersecting);
+  }, { threshold: 0 });
+  observer.observe(hero);
+
+  // Add bottom padding when sticky shows
+  const stickyCta = document.getElementById('stickyCta');
+  const mutObs = new MutationObserver(() => {
+    document.body.style.paddingBottom = stickyCta.classList.contains('visible') ? '80px' : '0';
+  });
+  mutObs.observe(stickyCta, { attributes: true, attributeFilter: ['class'] });
+</script>
+
+</body>
+</html>
